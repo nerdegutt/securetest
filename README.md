@@ -24,6 +24,8 @@ Add the domains to /etc/hosts to be able to address them by name
 127.0.0.1   secure.example.dev   alsosecure.example.dev   securecors.example.dev
 ```
 
+Run the server either by `> gulp` or directly through `> node index.js`
+
 Browse to `https://secure.example.dev:3005/`
 
 ## TL;DR
