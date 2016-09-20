@@ -6,7 +6,7 @@ It runs on a single node.js server, having multiple handlers for different domai
 
 ## Usage
 
-Create localhost self signed certificate and add them to the keychain
+Create local self signed certificate in the project root directory and add them to the keychain
 
 ```
 openssl req -x509 -sha256 -nodes -newkey rsa:2048 -days 365 -keyout secure.example.dev.key -out secure.example.dev.crt -subj '/CN=secure.example.dev'
@@ -24,9 +24,9 @@ Add the domains to /etc/hosts to be able to address them by name
 127.0.0.1   secure.example.dev   alsosecure.example.dev   securecors.example.dev
 ```
 
-Run the server either by `> gulp` or directly through `> node index.js`
+Remember to `npm install` and then run the server either by `gulp` or directly through `node index.js`
 
-Browse to `https://secure.example.dev:3005/`
+Browse to `https://secure.example.dev:3005/` and try the buttons to fetch content. Open the javascript console to see the error messages from the browser.
 
 ## TL;DR
 
