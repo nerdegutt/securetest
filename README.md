@@ -18,7 +18,10 @@ sudo security add-trusted-cert -p ssl -d -r trustRoot -k ~/Library/Keychains/log
 Add the domains to /etc/hosts to be able to address them by name
 
 ```
-127.0.0.1       insecure.example.dev secure.example.dev alsosecure.example.dev securecors.example.dev
+127.0.0.1   insecure.example.dev alsoinsecure.example.dev insecurecors.example.dev
+127.0.0.1   secure.example.dev   alsosecure.example.dev   securecors.example.dev
 ```
 
-Browse to `https://secure.example.dev:8081/`
+Browse to `https://secure.example.dev:3005/`
+
+Any modern browser will *not* allow https pages to fetch XHR content, even if CORS settings allow it. XHR fetched content if any kind is considered [blockable content](https://w3c.github.io/webappsec-mixed-content/#category-blockable).
