@@ -1,0 +1,22 @@
+{
+  "name": "securetest",
+  "version": "1.0.0",
+  "description": "Hapi.js based setup for testing cross domain connections with HTTP, HTTPS and CORS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Erlend Schei",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-nodemon": "^2.1.0",
+    "handlebars": "^4.0.5",
+    "hapi": "^15.0.3",
+    "inert": "^4.0.2",
+    "jshint-stylish": "^2.2.1",
+    "vision": "^4.1.0"
+  }
+}

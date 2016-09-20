@@ -1,0 +1,48 @@
+<h1 id="heading">CORS demo {{uri}}</h1>
+<div>
+  <button onclick="javascript:fetchStuff(0); return false;">HTTP</button>
+  <button onclick="javascript:fetchStuff(1); return false;">Local</button>
+  <button onclick="javascript:fetchStuff(2); return false;">HTTPS, different domain</button>
+  <button onclick="javascript:fetchStuff(3); return false;">HTTPS, different domain, CORS</button>
+</div>
+<div id="urlinfo">Press a button to try fetching external data</div>
+<div id="ajaxdatahere">Status: Awaiting user input</div>
+
+<script type="text/javascript">
+  /*
+   * There is very little error handling here.
+   * This is not production stuff!
+   */
+  function fetchStuff(idx) {
+
+    var xhr = new XMLHttpRequest();
+    var d = document,
+      a = d.getElementById('ajaxdatahere'),
+      u = document.getElementById('urlinfo');
+
+    var urls = [
+      'http://insecure.example.dev:8080/api/something',
+      '/api/something',
+      'https://alsosecure.example.dev:8082/api/something',
+      'https://securecors.example.dev:8083/api/something'
+    ];
+
+    xhr.open('GET', urls[idx]);
+    xhr.send(null);
+
+    u.innerHTML = "Fetching data from " + urls[idx];
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          a.className = 'success';
+          a.innerHTML = xhr.responseText;
+        } else {
+          a.className = 'error';
+          a.innerHTML = 'Error: ' + xhr.status + '. Check javascript console!';
+        }
+      }
+    };
+
+  }
+</script>

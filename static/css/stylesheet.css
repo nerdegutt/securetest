@@ -1,0 +1,7 @@
+body {font-family: "Helvetica Neue", Arial, freesans, sans-serif; font-weight:normal;}
+h1, h2 {font-weight: normal;}
+li {margin:0.5em 0;}
+div {margin-bottom: 1em;}
+#content-wrapper {max-width: 700px; margin:0 auto;}
+.error {color:red;}
+.success {color:green;}
