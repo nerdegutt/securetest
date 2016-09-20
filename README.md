@@ -1,7 +1,6 @@
 # CORS / HTTP / HTTPS demo
 
-A simple node.js server with multiple handlers on different domains. Uses Hapi.js framework and self signed certificates
-A web tool to populate a [MongoDB Atlas](https://cloud.mongo.com) instance with sample data (fetches datasets from [Mockaroo](https://www.mockaroo.com).
+A simple node.js server with multiple handlers on different domains. Uses [Hapi.js](http://hapijs.com) framework and self signed certificates.
 
 ## Usage
 
