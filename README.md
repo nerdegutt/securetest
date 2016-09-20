@@ -1,6 +1,8 @@
-# CORS / HTTP / HTTPS demo
+# CORS / HTTP / HTTPS XHR demo
 
-A simple node.js server with multiple handlers on different domains. Uses [Hapi.js](http://hapijs.com) framework and self signed certificates.
+This is a small tool I built to test the behaviour of XHR requests between combinations of secure, non secure, CORS and non CORS-enabled web servers.
+
+It runs on a single node.js server, having multiple handlers for different domains and security combinations. Uses [Hapi.js](http://hapijs.com) framework and self signed certificates.
 
 ## Usage
 
@@ -24,6 +26,8 @@ Add the domains to /etc/hosts to be able to address them by name
 
 Browse to `https://secure.example.dev:3005/`
 
-Any modern browser will _not_ allow https pages to fetch _non secure_ XHR content, even if CORS settings allow it. XHR fetched content from non secure sources kind is considered [blockable content](https://w3c.github.io/webappsec-mixed-content/#category-blockable).
+## TL;DR
 
-To avoid the majority of web sites to break completely, browsers allow https pages to fetch less risky content as per [optionally blockable content](https://w3c.github.io/webappsec-mixed-content/#category-optionally-blockable).
+Modern browsers will **not** allow https pages to fetch **non secure** XHR content, even if CORS settings allow it. XHR fetched content from non secure sources is considered [blockable content](https://w3c.github.io/webappsec-mixed-content/#category-blockable).
+
+To avoid the majority of web sites to break completely when going https, browsers allow https pages to fetch less risky content as described in [optionally blockable content](https://w3c.github.io/webappsec-mixed-content/#category-optionally-blockable).
