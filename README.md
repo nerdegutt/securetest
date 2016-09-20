@@ -24,4 +24,4 @@ Add the domains to /etc/hosts to be able to address them by name
 
 Browse to `https://secure.example.dev:3005/`
 
-Any modern browser will *not* allow https pages to fetch XHR content, even if CORS settings allow it. XHR fetched content if any kind is considered [blockable content](https://w3c.github.io/webappsec-mixed-content/#category-blockable).
+Any modern browser will _not_ allow https pages to fetch _non secure_ XHR content, even if CORS settings allow it. XHR fetched content if any kind is considered [blockable content](https://w3c.github.io/webappsec-mixed-content/#category-blockable).
